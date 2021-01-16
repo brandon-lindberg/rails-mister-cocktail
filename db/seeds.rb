@@ -34,7 +34,7 @@ Ingredient.destroy_all
 
 puts "creating Ingredients...."
 
-10.times do
+99.times do
   Ingredient.create(name: ingredient_hash["drinks"].sample["strIngredient1"])
 end
 
@@ -47,7 +47,7 @@ Dose.destroy_all
 puts "creating doses...."
 
 
-5.times do
+20.times do
   Dose.create(description: "#{rand(1..5)} parts")
 end
 puts "Doses created!!"
