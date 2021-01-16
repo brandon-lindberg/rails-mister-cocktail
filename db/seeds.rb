@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "cleaning database"
+Cocktail.destroy_all
+
+puts "creating cocktails...."
+5.times do
+  Cocktail.create(
+    name: Faker::Games::SuperMario.character
+  )
+end
+puts "cocktails created!!"
