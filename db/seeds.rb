@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'json'
 require 'httparty'
+require 'open-uri'
 
 puts "cleaning database"
 Cocktail.destroy_all
@@ -51,3 +52,9 @@ puts "creating doses...."
   Dose.create(description: "#{rand(1..5)} parts")
 end
 puts "Doses created!!"
+
+
+file = URI.('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/webcarmine-s-amaretto-sidecar-1571169801.jpg')
+cocktail = Cocktail.new(name: "cocktail")
+cocktail.photo.attach(io: file, filename: 'webcarmine-s-amaretto-sidecar-1571169801.jpg', content_type: 'image/jpg')
+cocktail.save
