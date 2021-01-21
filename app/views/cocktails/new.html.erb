@@ -1,7 +1,7 @@
 
 <div class="container">
    <%= simple_form_for @cocktail do |f| %>
-     <%= f.input :name  %>
+     <%= f.input :name, label: "What is the name of your Cocktail" %>
      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
      <%= f.submit class: 'btn btn-primary' %>
    <% end %>

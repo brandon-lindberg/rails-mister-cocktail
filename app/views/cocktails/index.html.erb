@@ -1,15 +1,25 @@
+
 <h1>Cocktails</h1>
 
 <%= cl_image_tag("fizijnctlzkxjyvzph3s", width: 200, height: 100, crop: :fill) %>
 
 <br>
 <br>
+
+
+
 <ol>
   <% @cocktails.each do |cocktail| %>
+  <div class="card-pick">
+    
     <li>
       <%= link_to cocktail.name, cocktail_path(cocktail) %> |
       <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: {confirm: 'Are you sure?'}  %>
     </li>
+    
+  </div>
+
   <% end %>
 </ol>
-<%= link_to 'Create New Cocktail', new_cocktail_path  %> 
+
+
